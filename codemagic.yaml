@@ -1,0 +1,25 @@
+workflows:
+  android-debug-build:
+    name: Android Debug Build
+    environment:
+      vars:
+        PACKAGE_NAME: "com.google.samples.apps.nowinandroid"
+    scripts:
+      - name: Clean project
+        script: |
+          ./gradlew clean
+
+      - name: Restore dependencies
+        script: |
+          ./gradlew dependencies
+
+      - name: Build Debug APK
+        script: |
+          ./gradlew assembleDebug
+
+    artifacts:
+      - app/build/outputs/apk/debug/app-debug.apk
+
+    publishing:
+      email:
+        recipients:"kengyap@upm.edu.my"
