@@ -22,4 +22,5 @@ workflows:
 
     publishing:
       email:
-        recipients:"kengyap@upm.edu.my"
+        recipients:
+          - "kengyap@upm.edu.my"
